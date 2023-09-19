@@ -1,0 +1,8 @@
+.icon {
+  width: 15px;
+  height: 15px;
+  fill: black;
+}
+.icon:hover path {
+  fill: #13343b;
+}
