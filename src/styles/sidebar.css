@@ -1,8 +1,124 @@
+.sider-bar {
+  width: 220px;
+  min-height: 99vh;
+  background-color: #f3f3ee;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.top-sideBar {
+  margin-top: 4px;
+  padding-top: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.new-thread {
+  margin: 1rem 1rem;
+  padding: 8px 8px 8px 16px;
+  background: white;
+  align-items: center;
+  justify-content: space-evenly;
+  border: 2px solid #f3f3ee;
+  border-radius: 20px;
+  cursor: pointer;
+  color: #64645f;
+  font-weight: 500;
+}
+.new-thread:hover {
+  border: 2px solid #20808d;
+  transition: 0.2s ease-in;
+}
+.btn {
+  border: 1px solid #f3f3ee;
+  font-family: monospace;
+  font-size: x-large;
+}
+.nav-options {
+  width: 100%;
+}
+.option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
+  font-size: 16px;
+  text-align: center;
+  color: #64645f;
+  font-weight: 500;
+  margin-top: 8px;
+}
+.nav-options a {
+  display: flex;
+  width: 100%;
+  height: 2.5rem;
+  padding: 0 16px;
+  align-items: center;
+  gap: 4px;
+}
+.nav-options a:hover {
+  background-color: #e8e8e3;
+  color: #13343b;
+  border-radius: 8px;
+}
+.new {
+  padding: 3px 5px;
+  position: relative;
+  left: 5rem;
+  background: #ff5459;
+  color: white;
+  border-radius: 3px;
+  font-size: 11px;
+  font-weight: 900;
+  font-family: monospace;
+}
+button {
+  margin: 16px 16px 0;
+  width: 12rem;
+  height: 2.5rem;
+  text-align: center;
+  color: white;
+  background: #20808d;
+  border: none;
+  font-size: larger;
+  border-radius: 20px;
+}
 .icon {
   width: 15px;
   height: 15px;
-  fill: black;
 }
-.icon:hover path {
+.nav-options a:hover path {
   fill: #13343b;
+}
+.bottom-sideBar {
+  display: flex;
+  flex-direction: column;
+  color: #64645f;
+  font-size: 15px;
+  font-weight: 400;
+}
+.learn-more {
+  margin: 10px 0px;
+  color: #13343b;
+  background: #e8e8e3;
+  width: 50%;
+  padding: 8px;
+  font-weight: 500;
+  border-radius: 4px;
+}
+.download {
+  padding: 8px 16px;
+  border-top: 1px solid #e8e8e3;
+  justify-content: space-between;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+a {
+  text-decoration: none;
+  color: currentColor;
 }

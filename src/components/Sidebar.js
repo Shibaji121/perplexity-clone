@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/sidebar.css";
-import logo from "../static/logo.svg";
+import { ReactComponent as Logo } from "../static/logo.svg";
 import { ReactComponent as SearchIcon } from "../static/SearchIcon.svg";
 import { ReactComponent as Discover } from "../static/discover.svg";
 import { ReactComponent as Library } from "../static/library.svg";
@@ -13,52 +13,66 @@ import { ReactComponent as Discord } from "../static/discord.svg";
 export default function SideBar() {
   return (
     <div className="sider-bar">
-      <div>
-        <a href="/">
-          <img src={logo} alt="" />
-        </a>
-        <div className="new-thread">
-          <div>New Thread</div>
-          <div>Ctrl</div>
-          <div>I</div>
+      <div className="top-sideBar">
+        <div className="logo">
+          <a href="/">
+            <Logo />
+          </a>
         </div>
-        <div>
-          <div>
-            <SearchIcon className="icon" />
-            <div>Home</div>
+        <div className="new-thread flex-row">
+          <div>New Thread</div>
+          <div className="btn">Ctrl</div>
+          <div className="btn">I</div>
+        </div>
+        <div className="nav-options">
+          <div className="option">
+            <a href="/">
+              <SearchIcon className="icon" />
+              Home
+            </a>
           </div>
-          <div>
-            <Discover className="icon" />
-            <div>Discover</div>
+          <div className="option">
+            <a href="/">
+              <Discover className="icon" />
+              Discover
+            </a>
           </div>
-          <div>
-            <Library className="icon" />
-            <div>Library</div>
-            <div>New</div>
+          <div className="option">
+            <a href="/">
+              <Library className="icon" />
+              Library
+              <div className="new">NEW</div>
+            </a>
           </div>
-          <div>
-            <Login className="icon" />
-            <div>Login</div>
+          <div className="option">
+            <a href="/">
+              <Login className="icon" />
+              Login
+            </a>
           </div>
         </div>
         <button>Sign Up</button>
       </div>
-      <div>
-        <div>
-          <div>Try Pro</div>
+      <div className="bottom-sideBar">
+        <div style={{ padding: "0px 16px 8px" }}>
+          <div style={{ color: "#1e3d44" }}>Try Pro</div>
           <div>
             Upgrade to Claude-2 or GPT-4, boost your Copilot uses, and upload
             more files.
           </div>
           <div>
-            <Arrow className="icon" />
-            <div>Learn More</div>
+            <div className="flex-row learn-more">
+              <Arrow className="icon" />
+              Learn More
+            </div>
           </div>
         </div>
-        <div>
+        <div className="flex-row download">
           <div>
-            <Mobile className="icon" />
-            <div>Download</div>
+            <a href="/">
+              <Mobile className="icon" />
+              Download
+            </a>
           </div>
           <div>
             <Xtwiter className="icon" />
