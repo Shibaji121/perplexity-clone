@@ -56,7 +56,7 @@ export default function HomePage() {
             </div>
             <div className="extra-links">
               {extraLinkData.map((data) => {
-                return <Link to="/">{data}</Link>;
+                return <Link to="/">{data} </Link>;
               })}
             </div>
           </div>
