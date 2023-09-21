@@ -1,0 +1,123 @@
+.home-container {
+  padding: 8px 0px;
+  width: 100%;
+  height: 97vh;
+}
+.home-page {
+  width: 50%;
+  min-height: 98vh;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.header-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
+.header {
+  display: flex;
+  flex-direction: column;
+}
+.header h1 {
+  text-align: center;
+  color: #13343b;
+  font-family: sans-serif;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  font-weight: 100;
+  letter-spacing: 1px;
+}
+.input-container {
+  border: 1px solid #e8e8e3;
+  border-radius: 8px;
+  padding: 1rem 1rem 0.5rem;
+}
+.text-area textarea {
+  width: -webkit-fill-available;
+  border: none;
+  font-size: 1rem;
+  overflow: auto;
+  resize: none;
+  outline: none;
+}
+.buttons-icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.buttons-icons div {
+  display: flex;
+  gap: 15px;
+}
+.buttons-icons a {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.slider {
+  border: 1px solid #e8e8e3;
+  width: 2.5rem;
+  height: 20px;
+  border-radius: 20px;
+}
+.slider-thumb {
+  width: 20px;
+  border-radius: 50%;
+  margin: 1px 2px 2px 3px;
+  background: #e8e8e3;
+}
+.suggestions {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+.asking {
+  color: #13343b;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+}
+.extra-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px;
+}
+.extra-links a {
+  padding: 4px;
+  border-radius: 4px;
+}
+.extra-links a:hover {
+  background-color: #e8e8e3;
+  transition: 0.4s;
+}
+.footer {
+  padding-bottom: 1rem;
+}
+.footer-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+.footer-links a {
+  color: #697073;
+}
+.footer-links a:hover {
+  text-decoration: underline;
+  transition: 1s;
+}
+@media screen and (max-width: 1300px) {
+  .home-page {
+    width: 80%;
+  }
+}

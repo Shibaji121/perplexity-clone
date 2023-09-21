@@ -4,6 +4,7 @@ import { ReactComponent as Plus } from "../static/plus.svg";
 import { ReactComponent as RightArrow } from "../static/rightarrow.svg";
 import { ReactComponent as RoundRight } from "../static/roundright.svg";
 import { Link } from "react-router-dom";
+import "../styles/HomePage.css";
 
 const extraLinkData = [
   "history Of Argentina",
@@ -17,52 +18,64 @@ const extraLinkData = [
 
 export default function HomePage() {
   return (
-    <div>
+    <div className="home-container">
       <div className="home-page">
-        <div className="header">
-          <h1>Where knowledge begins</h1>
-          <div>
-            <div>
-              <textarea />
-            </div>
-            <div>
-              <div>
-                <Link to="/">
-                  <SearchIcon className="icon" />
-                  Focus
-                </Link>
-                <Link to="/">
-                  <Plus className="icon" />
-                  File
-                </Link>
+        <div className="header-container">
+          <div className="header">
+            <h1>Where knowledge begins</h1>
+            <div className="input-container">
+              <div className="text-area">
+                <textarea placeholder="Ask anything..." />
               </div>
-              <div>
-                <Link to="/">
-                  <div>
-                    <div></div>
-                  </div>
-                  Copilot
-                </Link>
-                <Link to="/">
-                  <RightArrow className="icon" />
-                </Link>
+              <div className="buttons-icons">
+                <div className="left-button-icons">
+                  <Link to="/">
+                    <SearchIcon className="icon" />
+                    Focus
+                  </Link>
+                  <Link to="/">
+                    <Plus className="icon" />
+                    File
+                  </Link>
+                </div>
+                <div className="right-button-icons">
+                  <Link
+                    to="/"
+                    title="Ctrl + . Use Copilot for more comprehensive answers."
+                  >
+                    <div className="slider">
+                      <div className="slider-thumb"></div>
+                    </div>
+                    Copilot
+                  </Link>
+                  <Link
+                    to="/"
+                    style={{
+                      borderRadius: "50%",
+                      background: "#e8e8e3",
+                      padding: "5px",
+                    }}
+                  >
+                    <RightArrow className="icon" />
+                  </Link>
+                </div>
               </div>
             </div>
-          </div>
-          <div>
-            <div>
-              <RoundRight className="icon" />
-              Try asking
-            </div>
-            <div className="extra-links">
-              {extraLinkData.map((data) => {
-                return <Link to="/">{data} </Link>;
-              })}
+            <div className="suggestions">
+              <div className="asking">
+                <RoundRight className="icon" />
+                Try asking
+              </div>
+              <div className="extra-links">
+                {extraLinkData.map((data) => {
+                  return <Link to="/">{data} </Link>;
+                })}
+              </div>
             </div>
           </div>
         </div>
         <div className="footer">
-          <div>
+          <div className="footer-links">
             <Link to="/">Try Pro</Link>
             <Link to="/">Careers</Link>
             <Link to="/">FAQ</Link>

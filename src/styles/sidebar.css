@@ -1,6 +1,6 @@
 .sider-bar {
   width: 220px;
-  min-height: 99vh;
+  min-height: 100vh;
   background-color: #f3f3ee;
   display: flex;
   flex-direction: column;
