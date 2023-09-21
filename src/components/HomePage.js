@@ -67,8 +67,12 @@ export default function HomePage() {
                 Try asking
               </div>
               <div className="extra-links">
-                {extraLinkData.map((data) => {
-                  return <Link to="/">{data} </Link>;
+                {extraLinkData.map((data, index) => {
+                  return (
+                    <Link key={index} to="/">
+                      {data}{" "}
+                    </Link>
+                  );
                 })}
               </div>
             </div>
