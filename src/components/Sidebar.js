@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/sidebar.css";
 import { ReactComponent as Logo } from "../static/logo.svg";
 import { ReactComponent as SearchIcon } from "../static/SearchIcon.svg";
@@ -10,8 +10,13 @@ import { ReactComponent as Mobile } from "../static/mobile.svg";
 import { ReactComponent as Xtwiter } from "../static/x-twitter.svg";
 import { ReactComponent as Discord } from "../static/discord.svg";
 import { Link, Outlet } from "react-router-dom";
+import PopUp from "./PopUp";
 
 export default function SideBar() {
+  const [isloginClick, setIsloginClick] = useState(false);
+  const handleClose = () => {
+    setIsloginClick(false);
+  };
   return (
     <>
       <div className="sider-bar">
@@ -47,7 +52,7 @@ export default function SideBar() {
               </Link>
             </div>
             <div className="option">
-              <Link to="/">
+              <Link to="/" onClick={() => setIsloginClick(true)}>
                 <Login className="icon" />
                 Login
               </Link>
@@ -86,6 +91,7 @@ export default function SideBar() {
         </div>
       </div>
       <Outlet />
+      {isloginClick && <PopUp handleClose={handleClose} />}
     </>
   );
 }
