@@ -31,7 +31,6 @@ export default function SideBar() {
           return response.json();
         })
         .then((user) => {
-          console.log(user);
           setUser(user);
         })
         .catch((error) => {
