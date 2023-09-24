@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import { ReactComponent as Google } from "../static/google.svg";
 import { ReactComponent as Apple } from "../static/apple.svg";
 import { Link } from "react-router-dom";
 import "../styles/Login.css";
 import { useGoogleLogin } from "@react-oauth/google";
+import { Context } from "./MyContext";
 
 export default function Login() {
+  const context = useContext(Context);
   const login = useGoogleLogin({
-    onSuccess: (tokenResponse) => console.log(tokenResponse),
+    onSuccess: (tokenResponse) => {
+      context.setTokenResponse(tokenResponse);
+    },
   });
 
   return (

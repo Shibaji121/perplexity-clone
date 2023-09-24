@@ -4,25 +4,36 @@ export const Context = createContext();
 
 export default function MyContext(props) {
   const openLoginPop = () => {
-    setState({
-      ...initialState,
-      isloginClick: true,
-    });
+    setState((prev) => ({
+      ...prev,
+      isloginClick: !prev.isloginClick,
+    }));
   };
 
   const closeLoginPop = () => {
-    setState({
-      ...initialState,
-      isloginClick: false,
-    });
+    setState((prev) => ({
+      ...prev,
+      isloginClick: !prev.isloginClick,
+    }));
   };
-  const [initialState, setState] = useState({
+
+  const setTokenResponse = (response) => {
+    console.log(response);
+    setState((prev) => ({
+      ...prev,
+      tokenResponse: response,
+    }));
+  };
+
+  const initialState = {
     isloginClick: false,
     openLoginPop,
     closeLoginPop,
-  });
+    tokenResponse: {},
+    setTokenResponse,
+  };
 
-  return (
-    <Context.Provider value={initialState}>{props.children}</Context.Provider>
-  );
+  const [state, setState] = useState(initialState);
+
+  return <Context.Provider value={state}>{props.children}</Context.Provider>;
 }
