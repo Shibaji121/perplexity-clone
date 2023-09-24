@@ -51,14 +51,20 @@ export default function SideBar() {
                 <div className="new">NEW</div>
               </Link>
             </div>
-            <div className="option">
-              <Link to="/" onClick={context.openLoginPop}>
-                <LoginIcon className="icon" />
-                Login
-              </Link>
-            </div>
+            {Object.keys(context.tokenResponse).length === 0 && (
+              <div className="option">
+                <Link to="/" onClick={context.openLoginPop}>
+                  <LoginIcon className="icon" />
+                  Login
+                </Link>
+              </div>
+            )}
           </div>
-          <button className="sign-up">Sign Up</button>
+          {Object.keys(context.tokenResponse).length === 0 && (
+            <button className="sign-up" onClick={context.openLoginPop}>
+              Sign Up
+            </button>
+          )}
         </div>
         <div className="bottom-sideBar">
           <div style={{ padding: "0px 16px 8px" }}>

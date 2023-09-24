@@ -11,6 +11,10 @@ export default function Login() {
   const login = useGoogleLogin({
     onSuccess: (tokenResponse) => {
       context.setTokenResponse(tokenResponse);
+      context.closeLoginPop();
+    },
+    onError: () => {
+      console.log("Login Failed");
     },
   });
 
