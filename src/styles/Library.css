@@ -1,0 +1,117 @@
+.library-container {
+  height: 100%;
+  width: 100%;
+}
+.library-header {
+  display: flex;
+  flex-direction: row;
+  position: sticky;
+  top: 0;
+  padding: 2rem 0 0 2rem;
+  border-bottom: 1px solid #e8e8e3;
+  background-color: #fcfcf9;
+  height: 5rem;
+  align-items: center;
+  gap: 25vw;
+}
+.big-l-icon {
+  width: 30px;
+  height: 30px;
+}
+.heading-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  font-size: 2rem;
+}
+.inputs-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: 1px solid #e8e8e3;
+  border-radius: 20px;
+  width: 30vw;
+  padding-left: 8px;
+  height: 2.5rem;
+}
+.search-thread,
+.search-thread:focus,
+.search-thread:target {
+  border: none;
+  width: 100%;
+  outline: none;
+}
+.body-section {
+  display: flex;
+  flex-direction: row;
+  width: 75vw;
+  max-height: 80vh;
+  margin: 2rem auto;
+  justify-content: space-between;
+}
+.threads {
+  width: 65%;
+}
+.threads-top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.threads-top-left {
+  font-size: 1.5rem;
+  gap: 8px;
+}
+.threads-top-right {
+  display: flex;
+  gap: 8px;
+}
+.threads-top-right div,
+.plus-icon {
+  background-color: #e8e8e3;
+  padding: 8px;
+  border-radius: 5px;
+}
+.all-threads {
+  background-color: #e8e8e3;
+  text-align: center;
+  padding: 3rem;
+  color: #64645f;
+  border-radius: 8px;
+}
+.collections {
+  width: 30%;
+  height: 11vw;
+}
+.collection-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.collection-heading {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 1.5rem;
+}
+.organise {
+  background-color: #f3f3ee;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 8px;
+}
+.get-start {
+  background-color: #20808d;
+  color: white;
+  text-align: center;
+  padding: 8px 0;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  margin-top: 0.5rem;
+}
+hr {
+  border-color: #ffffff8a;
+}

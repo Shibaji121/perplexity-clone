@@ -71,7 +71,7 @@ export default function SideBar() {
               </Link>
             </div>
             <div className="option">
-              <Link to="/">
+              <Link to="/library">
                 <Library className="icon" />
                 Library
                 <div className="new">NEW</div>
