@@ -13,6 +13,7 @@ import { Link, Outlet } from "react-router-dom";
 import PopUp from "./PopUp";
 import Login from "./Login";
 import { Context } from "./MyContext";
+import NewThread from "./NewThread";
 
 export default function SideBar() {
   const [user, setUser] = useState({});
@@ -48,7 +49,10 @@ export default function SideBar() {
               <Logo />
             </Link>
           </div>
-          <div className="new-thread flex-row">
+          <div
+            className="new-thread flex-row"
+            onClick={context.openNewThreadPop}
+          >
             <div>New Thread</div>
             <div className="btn">Ctrl</div>
             <div className="btn">I</div>
@@ -128,6 +132,11 @@ export default function SideBar() {
       {context.isloginClick && (
         <PopUp handleClose={context.closeLoginPop}>
           <Login />
+        </PopUp>
+      )}
+      {context.isNewThreadClick && (
+        <PopUp handleClose={context.closeLoginPop}>
+          <NewThread />
         </PopUp>
       )}
     </>

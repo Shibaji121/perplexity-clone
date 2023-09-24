@@ -84,6 +84,7 @@
   border: none;
   font-size: larger;
   border-radius: 20px;
+  cursor: pointer;
 }
 .icon {
   width: 15px;

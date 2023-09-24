@@ -13,7 +13,8 @@ export default function MyContext(props) {
   const closeLoginPop = () => {
     setState((prev) => ({
       ...prev,
-      isloginClick: !prev.isloginClick,
+      isloginClick: false,
+      isNewThreadClick: false,
     }));
   };
 
@@ -25,12 +26,21 @@ export default function MyContext(props) {
     }));
   };
 
+  const openNewThreadPop = () => {
+    setState((prev) => ({
+      ...prev,
+      isNewThreadClick: !prev.isNewThreadClick,
+    }));
+  };
+
   const initialState = {
     isloginClick: false,
     openLoginPop,
     closeLoginPop,
     tokenResponse: {},
     setTokenResponse,
+    isNewThreadClick: false,
+    openNewThreadPop,
   };
 
   const [state, setState] = useState(initialState);
