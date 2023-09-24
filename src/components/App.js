@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from "./HomePage.js";
 import SideBar from "./Sidebar.js";
 import Library from "./Library.js";
+import Search from "./Search.js";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
       {
         path: "/library",
         element: <Library />,
+      },
+      {
+        path: "/search",
+        element: <Search />,
       },
     ],
   },

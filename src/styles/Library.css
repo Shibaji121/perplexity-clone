@@ -51,7 +51,7 @@
   justify-content: space-between;
 }
 .threads {
-  width: 65%;
+  width: 50vw;
 }
 .threads-top {
   display: flex;
@@ -81,7 +81,7 @@
   border-radius: 8px;
 }
 .collections {
-  width: 30%;
+  width: 22vw;
   height: 11vw;
 }
 .collection-header {

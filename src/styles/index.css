@@ -10,3 +10,16 @@ body {
   display: flex;
   flex-direction: row;
 }
+.slider {
+  border: 1px solid #bcbcba;
+  width: 2.5rem;
+  height: 20px;
+  border-radius: 20px;
+}
+.slider-thumb {
+  width: 20px;
+  height: 18px;
+  border-radius: 50%;
+  margin: 1px 2px 2px 3px;
+  background: #e8e8e3;
+}
