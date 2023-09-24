@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { ReactComponent as SearchIcon } from "../static/SearchIcon.svg";
 import { ReactComponent as Plus } from "../static/plus.svg";
 import { ReactComponent as RightArrow } from "../static/rightarrow.svg";
 import { Link } from "react-router-dom";
 import "../styles/HomePage.css";
+import { Context } from "./MyContext";
 
 export default function NewThread() {
   const [content, setContent] = useState("");
+  const context = useContext(Context);
 
   return (
     <div className="input-container" style={{ width: "50vw" }}>
@@ -45,6 +47,7 @@ export default function NewThread() {
               background: content.length === 0 ? "#e8e8e3" : "rgb(94 188 200)",
               padding: "5px",
             }}
+            onClick={() => context.handleSearch(content)}
           >
             <RightArrow className="icon" />
           </Link>

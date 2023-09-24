@@ -1,14 +1,23 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { ReactComponent as HeadIcon } from "../static/manhead.svg";
 import { ReactComponent as HeartIcon } from "../static/heart.svg";
 import { ReactComponent as ThreeDot } from "../static/threedot.svg";
 import { ReactComponent as LinkIcon } from "../static/linkIcon.svg";
 import { ReactComponent as ShareIcon } from "../static/shareIcon.svg";
 import { ReactComponent as StraightUp } from "../static/straightUpArrow.svg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../styles/Search.css";
+import { Context } from "./MyContext";
 
 export default function Search() {
+  const context = useContext(Context);
+  const nav = useNavigate();
+
+  useEffect(() => {
+    if (context.searchContent.length === 0) {
+      nav("/");
+    }
+  }, [context, nav]);
   return (
     <div className="search-container">
       <div className="search-header">
@@ -29,7 +38,7 @@ export default function Search() {
       </div>
       <hr />
       <div className="search-body">
-        <h1>Test Thread</h1>
+        <h1>{context.searchContent}</h1>
         <div className="ask-follow">
           <input type="text" placeholder="Ask follow-up..." />
           <div className="flex-row" style={{ gap: "8px" }}>

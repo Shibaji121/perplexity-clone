@@ -19,7 +19,6 @@ export default function MyContext(props) {
   };
 
   const setTokenResponse = (response) => {
-    console.log(response);
     setState((prev) => ({
       ...prev,
       tokenResponse: response,
@@ -33,6 +32,14 @@ export default function MyContext(props) {
     }));
   };
 
+  const handleSearch = (content) => {
+    setState((prev) => ({
+      ...prev,
+      searchContent: content,
+      isNewThreadClick: false,
+    }));
+  };
+
   const initialState = {
     isloginClick: false,
     openLoginPop,
@@ -41,6 +48,8 @@ export default function MyContext(props) {
     setTokenResponse,
     isNewThreadClick: false,
     openNewThreadPop,
+    searchContent: "",
+    handleSearch,
   };
 
   const [state, setState] = useState(initialState);
