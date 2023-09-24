@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { ReactComponent as SearchIcon } from "../static/SearchIcon.svg";
 import { ReactComponent as Plus } from "../static/plus.svg";
 import { ReactComponent as RightArrow } from "../static/rightarrow.svg";
@@ -6,10 +6,16 @@ import { Link } from "react-router-dom";
 import "../styles/HomePage.css";
 
 export default function NewThread() {
+  const [content, setContent] = useState("");
+
   return (
     <div className="input-container" style={{ width: "50vw" }}>
       <div className="text-area">
-        <textarea placeholder="Ask anything..." />
+        <textarea
+          placeholder="Ask anything..."
+          value={content}
+          onChange={(e) => setContent(e.target.value)}
+        />
       </div>
       <div className="buttons-icons">
         <div className="left-button-icons">
@@ -33,10 +39,10 @@ export default function NewThread() {
             Copilot
           </Link>
           <Link
-            to="/"
+            to={content.length === 0 ? "/" : "/search"}
             style={{
               borderRadius: "50%",
-              background: "#e8e8e3",
+              background: content.length === 0 ? "#e8e8e3" : "rgb(94 188 200)",
               padding: "5px",
             }}
           >
