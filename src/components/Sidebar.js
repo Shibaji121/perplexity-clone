@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "../styles/sidebar.css";
 import { ReactComponent as Logo } from "../static/logo.svg";
 import { ReactComponent as SearchIcon } from "../static/SearchIcon.svg";
@@ -15,7 +15,29 @@ import Login from "./Login";
 import { Context } from "./MyContext";
 
 export default function SideBar() {
+  const [user, setUser] = useState({});
   const context = useContext(Context);
+
+  useEffect(() => {
+    if (Object.keys(context.tokenResponse).length !== 0) {
+      fetch(
+        `https://www.googleapis.com/oauth2/v3/userinfo?access_token=${context.tokenResponse.access_token}`
+      )
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+          }
+          return response.json();
+        })
+        .then((user) => {
+          console.log(user);
+          setUser(user);
+        })
+        .catch((error) => {
+          console.error("Error fetching user info:", error);
+        });
+    }
+  }, [context]);
 
   return (
     <>
@@ -79,6 +101,12 @@ export default function SideBar() {
                 Learn More
               </div>
             </div>
+            {Object.keys(context.tokenResponse).length !== 0 && (
+              <div className="flex-row" style={{ gap: "10px" }}>
+                <img className="user-image" src={user.picture} alt="user-img" />
+                <h3 style={{ color: "#13343b", margin: "0" }}>{user.name}</h3>
+              </div>
+            )}
           </div>
           <div className="flex-row download">
             <div>
