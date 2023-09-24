@@ -3,15 +3,20 @@ import { ReactComponent as Google } from "../static/google.svg";
 import { ReactComponent as Apple } from "../static/apple.svg";
 import { Link } from "react-router-dom";
 import "../styles/Login.css";
+import { useGoogleLogin } from "@react-oauth/google";
 
 export default function Login() {
+  const login = useGoogleLogin({
+    onSuccess: (tokenResponse) => console.log(tokenResponse),
+  });
+
   return (
     <div className="login-container">
       <h1>Welcome</h1>
       <div style={{ color: "#13343b", margin: "8px 0 16px 0px" }}>
         Sign in or sign up to continue
       </div>
-      <button className="login-btns">
+      <button className="login-btns" onClick={() => login()}>
         <Link to="/">
           <Google className="icon" />
           Continue with Google

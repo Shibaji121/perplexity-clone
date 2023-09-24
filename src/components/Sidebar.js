@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import "../styles/sidebar.css";
 import { ReactComponent as Logo } from "../static/logo.svg";
 import { ReactComponent as SearchIcon } from "../static/SearchIcon.svg";
@@ -12,12 +12,11 @@ import { ReactComponent as Discord } from "../static/discord.svg";
 import { Link, Outlet } from "react-router-dom";
 import PopUp from "./PopUp";
 import Login from "./Login";
+import { Context } from "./MyContext";
 
 export default function SideBar() {
-  const [isloginClick, setIsloginClick] = useState(false);
-  const handleClose = () => {
-    setIsloginClick(false);
-  };
+  const context = useContext(Context);
+
   return (
     <>
       <div className="sider-bar">
@@ -53,7 +52,7 @@ export default function SideBar() {
               </Link>
             </div>
             <div className="option">
-              <Link to="/" onClick={() => setIsloginClick(true)}>
+              <Link to="/" onClick={context.openLoginPop}>
                 <LoginIcon className="icon" />
                 Login
               </Link>
@@ -92,8 +91,8 @@ export default function SideBar() {
         </div>
       </div>
       <Outlet />
-      {isloginClick && (
-        <PopUp handleClose={handleClose}>
+      {context.isloginClick && (
+        <PopUp handleClose={context.closeLoginPop}>
           <Login />
         </PopUp>
       )}
